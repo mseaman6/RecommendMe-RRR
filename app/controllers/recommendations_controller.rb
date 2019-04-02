@@ -23,7 +23,17 @@ class RecommendationsController < ApplicationController
   end
 
   def show
+    @recommendation = Recommendation.find(params[:id])
     render json: @recommendation
+  end
+
+  def destroy
+    @recommendation = Recommendation.find(params[:id])
+    if @recommendation.destroy
+      render json: Recommendation.all
+    else
+      render json: { error: "The was a problem deleting this recommendation." }, status: 400
+    end
   end
 
 
