@@ -1,4 +1,4 @@
-class RecommendationsController < ApplicationController
+class Api::RecommendationsController < ApplicationController
 
   def index
     if params[:category_id]
