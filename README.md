@@ -22,3 +22,12 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+#next steps
+-set up active_model_serializers
+-set up foreman? (https://www.fullstackreact.com/articles/how-to-get-create-react-app-to-work-with-your-rails-api/)
+-run create-react-app, to set up the react side
+-add redux & thunk
+-create reducers & actions
+-set up components containers and presentational
+-get bootstrap set up for css styling (react-bootstrap); check how different from prior bootstrap
