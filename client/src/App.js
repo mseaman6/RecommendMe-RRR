@@ -1,6 +1,12 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import {
+  BrowserRouter as Router,
+  Route
+} from 'react-router-dom';
+import NavBar from '../containers/NavBar';
+import Recommendations from '../containers/Recommendations';
 
 class App extends Component {
   render() {
@@ -24,5 +30,19 @@ class App extends Component {
     );
   }
 }
+
+//const App = (props) => {
+//  return (
+//    <Router>
+//      <div>
+//        <NavBar />
+//        <Route exact path="/" render={Home} />
+//        <Route exact path="/movies" render={Movies} />
+//        <Route exact path="/directors" render={Directors} />
+//        <Route exact path="/actors" render={Actors} />
+//      </div>
+//    </Router>
+//  );
+//};
 
 export default App;
