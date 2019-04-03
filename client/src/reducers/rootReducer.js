@@ -1,5 +1,5 @@
 import { combineReducers } from "redux";
-import manageRecommendations from './manageRecommendations'
+import manageRecommendation from './manageRecommendation'
 
 import cuid from 'cuid';
 export const cuidFn = cuid;
