@@ -12,7 +12,7 @@ class Recommendation extends Component {
           {recommendation.title}
           {recommendation.description}
           <button onClick={() => this.props.deleteRecommendation(recommendation.id)}> X </button>
-          //<CommentsContainer recommendation={recommendation}/>
+          {/*<CommentsContainer recommendation={recommendation}/>*/}
         </li>
       </div>
     );

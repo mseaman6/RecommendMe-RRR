@@ -8,6 +8,7 @@ class RecommendationsContainer extends Component {
   render() {
     return (
       <div>
+        Recommendations
         <Recommendations recommendations={this.props.recommendations} deleteRecommendation={this.props.deleteRecommendation} />
       </div>
     )

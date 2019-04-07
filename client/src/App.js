@@ -12,6 +12,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
+        Recommendations Container
         <RecommendationsContainer />
       </div>
     );
