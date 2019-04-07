@@ -1,11 +1,10 @@
-const API_URL = 'http://localhost:3001/api'
 
 export function fetchRecommendations() {
   return (dispatch) => {
     dispatch({ type: 'LOADING_RECOMMENDATIONS' });
-    return fetch(`${API_URL}/recommendations`)
+    return fetch(`api/recommendations`)
       .then(response => response.json())
-      .then(recommendations => dispatch({ type: 'FETCH_RECOMMENDATIONS', payload: recommendations }))
+      .then(recommendations => dispatch({ type: 'FETCH_RECOMMENDATIONS', recommendations }))
       .catch(error => console.log(error))
    };
 }

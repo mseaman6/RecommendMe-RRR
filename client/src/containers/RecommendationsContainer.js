@@ -11,7 +11,6 @@ class RecommendationsContainer extends Component {
   }
 
   render() {
-    console.log(this.props.recommendations);
 
     return (
       <div>
@@ -22,10 +21,10 @@ class RecommendationsContainer extends Component {
   }
 }
 
-const mapStateToProps = state => {
-  return { recommendations: state.recommendations }
-}
+//const mapStateToProps = state => {
+//  return { recommendations: state.recommendations }
+//}
 
-//const mapStateToProps = ({ recommendations }) => ({ recommendations })
+const mapStateToProps = ({ recommendations }) => ({ recommendations })
 
 export default connect(mapStateToProps, { fetchRecommendations, deleteRecommendation })(RecommendationsContainer)

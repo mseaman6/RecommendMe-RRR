@@ -9,8 +9,7 @@ class Recommendation extends Component {
     return (
       <div>
         <li>
-          {recommendation.title}
-          {recommendation.description}
+          {recommendation.title} - {recommendation.description}
           <button onClick={() => this.props.deleteRecommendation(recommendation.id)}> X </button>
           {/*<CommentsContainer recommendation={recommendation}/>*/}
         </li>
