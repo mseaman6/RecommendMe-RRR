@@ -5,27 +5,14 @@ import {
   BrowserRouter as Router,
   Route
 } from 'react-router-dom';
-import NavBar from '../containers/NavBar';
-import Recommendations from '../containers/Recommendations';
+import NavBar from './containers/NavBar';
+import RecommendationsContainer from './containers/RecommendationsContainer';
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+        <RecommendationsContainer />
       </div>
     );
   }
@@ -37,9 +24,9 @@ class App extends Component {
 //      <div>
 //        <NavBar />
 //        <Route exact path="/" render={Home} />
-//        <Route exact path="/movies" render={Movies} />
-//        <Route exact path="/directors" render={Directors} />
-//        <Route exact path="/actors" render={Actors} />
+//        <Route exact path="/recommendations" render={Recommendations} />
+//        <Route exact path="/categories" render={Categories} />
+//        <Route exact path="/recommendations/new" render={RecommendationInput} />
 //      </div>
 //    </Router>
 //  );
