@@ -1,13 +1,18 @@
 import React, { Component } from 'react'
 import Recommendations from '../components/recommendations/Recommendations'
-import { fetchRecommendations, deleteRecommendation, addRecommendation } from './actions/recommendationActions';
+import { fetchRecommendations, deleteRecommendation, addRecommendation } from '../actions/recommendationActions';
 
 
 import { connect } from 'react-redux'
 
 class RecommendationsContainer extends Component {
+  componentDidMount() {
+    this.props.fetchRecommendations();
+  }
 
   render() {
+    console.log(this.props.recommendations);
+
     return (
       <div>
         Recommendations
@@ -17,11 +22,10 @@ class RecommendationsContainer extends Component {
   }
 }
 
-const mapStateToProps = ({ recommendations }) => ({ recommendations })
+const mapStateToProps = state => {
+  return { recommendations: state.recommendations }
+}
 
-const mapDispatchToProps = dispatch => ({
-//  addRestaurant: text => dispatch({ type: "ADD_RESTAURANT", text }),
-  deleteRecommendation: id => dispatch({ type: "DELETE_RECOMMENDATION", id }),
-})
+//const mapStateToProps = ({ recommendations }) => ({ recommendations })
 
 export default connect(mapStateToProps, { fetchRecommendations, deleteRecommendation })(RecommendationsContainer)

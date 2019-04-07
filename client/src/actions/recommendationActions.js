@@ -5,7 +5,7 @@ export function fetchRecommendations() {
     dispatch({ type: 'LOADING_RECOMMENDATIONS' });
     return fetch(`${API_URL}/recommendations`)
       .then(response => response.json())
-      .then(response => dispatch({ type: 'FETCH_RECOMMENDATIONS', payload: recommendations }))
+      .then(recommendations => dispatch({ type: 'FETCH_RECOMMENDATIONS', payload: recommendations }))
       .catch(error => console.log(error))
    };
 }
