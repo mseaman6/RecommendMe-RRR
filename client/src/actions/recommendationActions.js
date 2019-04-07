@@ -1,8 +1,26 @@
+const API_URL = 'http://localhost:3001/api'
+
 export function fetchRecommendations() {
   return (dispatch) => {
     dispatch({ type: 'LOADING_RECOMMENDATIONS' });
-    return fetch('http://localhost:3000/api/recommendations')
+    return fetch(`${API_URL}/recommendations`)
       .then(response => response.json())
-      .then(response => dispatch({ type: 'FETCH_RECOMMENDATIONS', payload: response }))
+      .then(response => dispatch({ type: 'FETCH_RECOMMENDATIONS', payload: recommendations }))
+      .catch(error => console.log(error))
    };
 }
+
+
+export const deleteRecommendation = id => {
+  return {
+    type: 'DELETE_RECOMMENDATION',
+    id
+  };
+};
+
+export const addRecommendation = recommendation => {
+  return {
+    type: 'DELETE_RECOMMENDATION',
+    recommendation
+  };
+};

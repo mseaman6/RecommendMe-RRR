@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 import Recommendations from '../components/recommendations/Recommendations'
+import { fetchRecommendations, deleteRecommendation, addRecommendation } from './actions/recommendationActions';
+
 
 import { connect } from 'react-redux'
 
@@ -22,4 +24,4 @@ const mapDispatchToProps = dispatch => ({
   deleteRecommendation: id => dispatch({ type: "DELETE_RECOMMENDATION", id }),
 })
 
-export default connect(mapStateToProps, mapDispatchToProps)(RecommendationsContainer)
+export default connect(mapStateToProps, { fetchRecommendations, deleteRecommendation })(RecommendationsContainer)
