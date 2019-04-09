@@ -2,34 +2,25 @@ import React, { Component } from 'react';
 import './App.css';
 import {
   BrowserRouter as Router,
-  Route
+  Route,
+  Switch
 } from 'react-router-dom';
 import NavBar from './containers/NavBar';
 import RecommendationsContainer from './containers/RecommendationsContainer';
+import RecommendationInput from './containers/RecommendationInput';
 
-class App extends Component {
-  render() {
-    return (
+const App = () => {
+  return (
+    <Router>
       <div className="App">
-        Recommendations Container
-        <RecommendationsContainer />
+        <NavBar />
+        <Switch>
+          <Route exact path="/recommendations" component={RecommendationsContainer} />
+          <Route exact path="/recommendations/new" component={RecommendationInput} />
+        </Switch>
       </div>
-    );
-  }
+    </Router>
+  )
 }
-
-//const App = (props) => {
-//  return (
-//    <Router>
-//      <div>
-//        <NavBar />
-//        <Route exact path="/" render={Home} />
-//        <Route exact path="/recommendations" render={Recommendations} />
-//        <Route exact path="/categories" render={Categories} />
-//        <Route exact path="/recommendations/new" render={RecommendationInput} />
-//      </div>
-//    </Router>
-//  );
-//};
 
 export default App;

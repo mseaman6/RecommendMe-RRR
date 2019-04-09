@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import Recommendations from '../components/recommendations/Recommendations'
-import RecommendationInput from '../components/recommendations/RecommendationInput'
+import RecommendationInput from './RecommendationInput'
 import { fetchRecommendations, deleteRecommendation, addRecommendation } from '../actions/recommendationActions';
 
 

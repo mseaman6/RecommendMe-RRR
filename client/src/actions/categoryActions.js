@@ -13,13 +13,14 @@ export function fetchCategories() {
 }
 
 export const addCategory = category => {
+  console.log(category)
   return (dispatch) => {
     return fetch(`api/categories/`, {
       method: "POST",
       headers: {
         "Content-Type": 'application/json'
       },
-      body: JSON.stringify(category: category)
+      body: JSON.stringify({category: category})
     })
     .then(response => response.json())
     .then(category => {
@@ -28,5 +29,4 @@ export const addCategory = category => {
     })
     .catch(error => console.log(error))
    };
-   */
 };

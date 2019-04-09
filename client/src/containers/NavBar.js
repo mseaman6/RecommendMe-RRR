@@ -7,21 +7,15 @@ const NavBar = () => {
       <ul>
         <li>
           <NavLink
-            to="/"
-            exact
-          >Home</NavLink>
-        </li>
-        <li>
-          <NavLink
             to="/recommendations"
             exact
           >Recommendations</NavLink>
         </li>
         <li>
           <NavLink
-            to="/categories"
+            to="/recommendations/new"
             exact
-          >Categories</NavLink>
+          >New Recommendation</NavLink>
         </li>
       </ul>
     </div>
