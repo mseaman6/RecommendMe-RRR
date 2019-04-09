@@ -27,14 +27,14 @@ class CategoryInput extends Component {
   render() {
     return (
       <div>
-        <form>
+        <form onSubmit={(event) => this.handleOnSubmit(event)}>
           <input
             type="text"
             name="category"
             placeholder="or create a new category"
             value={this.state.category}
             onChange={(event) => this.handleOnChange(event)} />
-          <input type="submit" placeholder="Create New Category" />
+          <input type="submit" value="Create New Category" />
         </form>
       </div>
     );
