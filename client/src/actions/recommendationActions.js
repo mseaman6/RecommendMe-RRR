@@ -11,10 +11,20 @@ export function fetchRecommendations() {
 
 
 export const deleteRecommendation = id => {
-  return {
-    type: 'DELETE_RECOMMENDATION',
-    id
-  };
+  return (dispatch) => {
+    return fetch(`api/recommendations/${id}`, {
+      method: "DELETE",
+      headers: {
+        "Content-Type": 'application/json'
+      },
+    })
+    .then(response => response.json())
+    .then(recommendations => {
+      console.log(recommendations)
+      dispatch({ type: 'FETCH_RECOMMENDATIONS', recommendations })
+    })
+    .catch(error => console.log(error))
+   };
 };
 
 export const addRecommendation = recommendation => {

@@ -1,10 +1,10 @@
 export default function manageRecommendations(state = [], action) {
   switch (action.type) {
     case 'FETCH_RECOMMENDATIONS':
+      console.log(action)
+      debugger;
       return action.recommendations;
 
-    //case 'DELETE_RECOMMENDATION':
-      //return state.filter(recommendation => recommendation.id !== action.id);
 
     default:
       return state;
