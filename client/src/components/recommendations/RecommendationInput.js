@@ -76,7 +76,7 @@ class RecommendationInput extends Component {
               value={this.state.category}
               onChange={(event) => this.handleOnChange(event)} />
           </label>
-
+          <div></div>
           <input type="submit" />
         </form>
       </div>

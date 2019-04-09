@@ -19,6 +19,7 @@ class RecommendationsContainer extends Component {
           New Recommendation
           <RecommendationInput addRecommendation={this.props.addRecommendation} />
         </div>
+
         <div>
           Recommendations
           <Recommendations recommendations={this.props.recommendations} deleteRecommendation={this.props.deleteRecommendation} />
@@ -27,10 +28,6 @@ class RecommendationsContainer extends Component {
     )
   }
 }
-
-//const mapStateToProps = state => {
-//  return { recommendations: state.recommendations }
-//}
 
 const mapStateToProps = ({ recommendations }) => ({ recommendations })
 
