@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import Recommendations from '../components/recommendations/Recommendations'
-import RecommendationInput from './RecommendationInput'
 import { fetchRecommendations, deleteRecommendation, addRecommendation } from '../actions/recommendationActions';
 
 
@@ -15,15 +14,8 @@ class RecommendationsContainer extends Component {
 
     return (
       <div>
-        <div>
-          New Recommendation
-          <RecommendationInput addRecommendation={this.props.addRecommendation} />
-        </div>
-
-        <div>
-          Recommendations
-          <Recommendations recommendations={this.props.recommendations} deleteRecommendation={this.props.deleteRecommendation} />
-        </div>
+        Recommendations
+        <Recommendations recommendations={this.props.recommendations} deleteRecommendation={this.props.deleteRecommendation} />
       </div>
     )
   }
