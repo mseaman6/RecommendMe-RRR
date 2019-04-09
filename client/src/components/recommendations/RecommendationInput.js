@@ -42,7 +42,7 @@ class RecommendationInput extends Component {
         Create a Recommendation:
         <form onSubmit={(event) => this.handleOnSubmit(event)}>
           <label>
-            Title
+            Title: 
             <input
               type="text"
               name="title"
@@ -50,16 +50,16 @@ class RecommendationInput extends Component {
               value={this.state.title}
               onChange={(event) => this.handleOnChange(event)} />
           </label>
-
+          <div></div>
           <label>
-            Description
+            Description:
             <textarea
               name="description"
               placeholder="tell me more..."
               value={this.state.description}
               onChange={(event) => this.handleOnChange(event)} />
           </label>
-
+          <div></div>
           <label>
             Category:
             <select
