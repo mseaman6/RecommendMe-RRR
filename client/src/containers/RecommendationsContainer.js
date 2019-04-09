@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import Recommendations from '../components/recommendations/Recommendations'
+import RecommendationInput from '../components/recommendations/RecommendationInput'
 import { fetchRecommendations, deleteRecommendation, addRecommendation } from '../actions/recommendationActions';
 
 
@@ -14,8 +15,14 @@ class RecommendationsContainer extends Component {
 
     return (
       <div>
-        Recommendations
-        <Recommendations recommendations={this.props.recommendations} deleteRecommendation={this.props.deleteRecommendation} />
+        <div>
+          New Recommendation
+          <RecommendationInput addRecommendation={this.props.addRecommendation} />
+        </div>
+        <div>
+          Recommendations
+          <Recommendations recommendations={this.props.recommendations} deleteRecommendation={this.props.deleteRecommendation} />
+        </div>
       </div>
     )
   }
@@ -27,4 +34,4 @@ class RecommendationsContainer extends Component {
 
 const mapStateToProps = ({ recommendations }) => ({ recommendations })
 
-export default connect(mapStateToProps, { fetchRecommendations, deleteRecommendation })(RecommendationsContainer)
+export default connect(mapStateToProps, { fetchRecommendations, deleteRecommendation, addRecommendation })(RecommendationsContainer)
