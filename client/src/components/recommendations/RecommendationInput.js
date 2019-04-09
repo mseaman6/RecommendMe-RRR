@@ -42,7 +42,7 @@ class RecommendationInput extends Component {
         Create a Recommendation:
         <form onSubmit={(event) => this.handleOnSubmit(event)}>
           <label>
-            Title: 
+            Title:
             <input
               type="text"
               name="title"

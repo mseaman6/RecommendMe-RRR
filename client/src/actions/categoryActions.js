@@ -4,7 +4,10 @@ export function fetchCategories() {
     dispatch({ type: 'LOADING_CATEGORIES' });
     return fetch(`api/categories`)
       .then(response => response.json())
-      .then(categories => dispatch({ type: 'FETCH_CATEGORIES', categories }))
+      .then(categories => {
+        dispatch({ type: 'FETCH_CATEGORIES', categories })
+        console.log(categories)
+      })
       .catch(error => console.log(error))
    };
 }
