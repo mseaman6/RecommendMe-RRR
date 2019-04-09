@@ -1,11 +1,11 @@
 import { combineReducers } from "redux";
 import manageRecommendation from './manageRecommendation'
+import manageCategory from './manageCategory'
 
-//import cuid from 'cuid';
-//export const cuidFn = cuid;
 
 const rootReducer = combineReducers({
   recommendations: manageRecommendation
+  categories: manageCategory
 });
 
 export default rootReducer;
