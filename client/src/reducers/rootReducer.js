@@ -4,7 +4,7 @@ import manageCategory from './manageCategory'
 
 
 const rootReducer = combineReducers({
-  recommendations: manageRecommendation
+  recommendations: manageRecommendation,
   categories: manageCategory
 });
 

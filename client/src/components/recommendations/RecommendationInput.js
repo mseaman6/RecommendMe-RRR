@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 //import CategoryInput from '../components/categories/CategoryInput'
-import { fetchCategories } from '../actions/categoryActions';
+import { fetchCategories } from '../../actions/categoryActions';
 
 import { connect } from 'react-redux'
 
@@ -75,7 +75,7 @@ class RecommendationInput extends Component {
               placeholder="or create a new category"
               value={this.state.category}
               onChange={(event) => this.handleOnChange(event)} />
-          <label>
+          </label>
 
           <input type="submit" />
         </form>
