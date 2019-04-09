@@ -27,8 +27,9 @@ export const deleteRecommendation = id => {
    };
 };
 
+
 export const addRecommendation = recommendation => {
-  return (dispatch) => {
+/*  return (dispatch) => {
     return fetch(`api/recommendations/`, {
       method: "POST",
       headers: {
@@ -43,4 +44,5 @@ export const addRecommendation = recommendation => {
     })
     .catch(error => console.log(error))
    };
+   */
 };
