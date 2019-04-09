@@ -13,18 +13,18 @@ export function fetchCategories() {
 }
 
 export const addCategory = category => {
-/*  return (dispatch) => {
-    return fetch(`api/recommendations/`, {
+  return (dispatch) => {
+    return fetch(`api/categories/`, {
       method: "POST",
       headers: {
         "Content-Type": 'application/json'
       },
-      body: JSON.stringify(recommendation: recommendation)
+      body: JSON.stringify(category: category)
     })
     .then(response => response.json())
-    .then(recommendation => {
-      console.log(recommendation)
-      dispatch({ type: 'CREATE_RECOMMENDATION', recommendation })
+    .then(category => {
+      console.log(category)
+      dispatch({ type: 'CREATE_CATEGORY', category })
     })
     .catch(error => console.log(error))
    };
