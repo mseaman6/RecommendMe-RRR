@@ -1,33 +1,39 @@
-.App {
-  text-align: left;
+/*////// MEDIA //////*/
+
+img, video, audio, iframe, table form {
+  width: 100%; /* IE */
+  max-width: 100%; /* FF, Safari, Chrome */
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
+/*////// LAYOUT STYLES //////*/
+
+.row {
+  margin-bottom: 25px;
+  margin-top: 25px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+/*////// BACKGROUNDS //////*/
+
+.light-fade {
+  background: rgb(138,213,218); /* Old browsers */
+  background: -moz-linear-gradient(top, rgba(138,213,218,1) 0%, rgba(186,233,236,1) 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, rgba(138,213,218,1) 0%,rgba(186,233,236,1) 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, rgba(138,213,218,1) 0%,rgba(186,233,236,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#8ad5da', endColorstr='#bae9ec',GradientType=0 ); /* IE6-9 */
 }
 
-.App-link {
-  color: #61dafb;
+.error_message {
+  color: red;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.field_with_errors {
+  color: red;
+}
+
+.field_with_errors input {
+  background-color: #ffa7a1;
+}
+
+.field_with_errors select {
+  background-color: #ffa7a1;
 }

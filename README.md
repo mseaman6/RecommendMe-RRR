@@ -24,7 +24,10 @@ Things you may want to cover:
 * ...
 
 #next steps
--set up app, store, folders, etc.
--create reducers & actions
--set up components containers and presentational
--get bootstrap set up for css styling (react-bootstrap); check how different from prior bootstrap
+-set up Recommendation show/edit page
+-edit actions
+-determine what additional functionality desired for project submission
+-set up additional components (containers and presentational)
+-figure out routing issue
+-create README
+-add in comments
