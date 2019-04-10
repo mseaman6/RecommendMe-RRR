@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import Recommendation from './Recommendation'
+import { ListGroup } from 'react-bootstrap';
+
 
 class Recommendations extends Component {
 
@@ -9,9 +11,12 @@ class Recommendations extends Component {
 
   render() {
     return(
-      <ul>
-        {this.renderRecommendations()}
-      </ul>
+      <div>
+        <h2>Recommendations</h2>
+        <ListGroup>
+          {this.renderRecommendations()}
+        </ListGroup>
+      </div>
     );
   }
 };

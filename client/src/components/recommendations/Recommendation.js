@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { ListGroup, Button, ButtonToolbar } from 'react-bootstrap';
 //import CommentsContainer from '../../containers/CommentsContainer'
 
 class Recommendation extends Component {
@@ -8,11 +9,18 @@ class Recommendation extends Component {
 
     return (
       <div>
-        <li>
-          {recommendation.title} - {recommendation.description}
-          <button onClick={() => this.props.deleteRecommendation(recommendation.id)}> X </button>
-          {/*<CommentsContainer recommendation={recommendation}/>*/}
-        </li>
+        <ListGroup.Item>
+          <h4>{recommendation.title}</h4>
+          <div>{recommendation.description}</div>
+          <ButtonToolbar>
+            <Button variant="info" size="sm">
+              Edit
+            </Button>
+            <Button onClick={() => this.props.deleteRecommendation(recommendation.id)} variant="danger" size="sm">
+              Delete
+            </Button>
+          </ButtonToolbar>
+        </ListGroup.Item>
       </div>
     );
   }

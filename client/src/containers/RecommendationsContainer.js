@@ -14,7 +14,6 @@ class RecommendationsContainer extends Component {
 
     return (
       <div>
-        Recommendations
         <Recommendations recommendations={this.props.recommendations} deleteRecommendation={this.props.deleteRecommendation} />
       </div>
     )
