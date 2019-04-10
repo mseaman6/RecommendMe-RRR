@@ -35,7 +35,7 @@ export const addRecommendation = recommendation => {
       headers: {
         "Content-Type": 'application/json'
       },
-      body: JSON.stringify(recommendation: recommendation)
+      body: JSON.stringify({recommendation: recommendation})
     })
     .then(response => response.json())
     .then(recommendation => {

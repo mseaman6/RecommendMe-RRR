@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import CategoryInput from '../components/categories/CategoryInput'
+//import CategoryInput from './CategoryInput'
+import { addRecommendation } from '../actions/recommendationActions';
 import { fetchCategories } from '../actions/categoryActions';
 
 import { connect } from 'react-redux'
@@ -34,6 +35,7 @@ class RecommendationInput extends Component {
   }
 
   renderCategories = () => {
+    debugger;
     return this.props.categories.map(category => <option value={category.id}>{category.name}</option>)
   }
 
@@ -70,7 +72,6 @@ class RecommendationInput extends Component {
               onChange={(event) => this.handleOnChange(event)}>
               {this.renderCategories()}
             </select>
-            <CategoryInput />
           </label>
           <div></div>
           <input type="submit" />
@@ -82,4 +83,4 @@ class RecommendationInput extends Component {
 
 const mapStateToProps = ({ categories }) => ({ categories })
 
-export default connect(mapStateToProps, { fetchCategories })(RecommendationInput)
+export default connect(mapStateToProps, { addRecommendation, fetchCategories })(RecommendationInput)
