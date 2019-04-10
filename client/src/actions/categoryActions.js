@@ -1,7 +1,7 @@
 
 export function fetchCategories() {
-  return (dispatch) => {
-    dispatch({ type: 'LOADING_CATEGORIES' });
+   return (dispatch) => {
+  //   dispatch({ type: 'LOADING_CATEGORIES' });
     return fetch(`api/categories`)
       .then(response => response.json())
       .then(categories => {
@@ -9,7 +9,7 @@ export function fetchCategories() {
         console.log(categories)
       })
       .catch(error => console.log(error))
-   };
+    };
 }
 
 // export const addCategory = category => {
