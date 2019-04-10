@@ -9,6 +9,8 @@ import NavigBar from './containers/NavBar';
 import RecommendationsContainer from './containers/RecommendationsContainer';
 import RecommendationInput from './containers/RecommendationInput';
 import RecommendationShow from './containers/RecommendationShow';
+import Recommendation from './components/recommendations/Recommendation';
+
 
 
 const App = () => {
@@ -20,6 +22,7 @@ const App = () => {
           <Route exact path="/recommendations" component={RecommendationsContainer} />
           <Route exact path="/recommendations/new" component={RecommendationInput} />
           <Route exact path="/categories" component={RecommendationInput} />
+          <Route path="/recommendations/:id" component={Recommendation} />
           // <Route path="/recommendations/:id/edit" component={RecommendationInput} />
         </Switch>
       </div>

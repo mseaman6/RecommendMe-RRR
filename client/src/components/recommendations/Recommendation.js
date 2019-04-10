@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { Button, ButtonToolbar } from 'react-bootstrap';
-import Recommendation from './Recommendation'
 
 //import CommentsContainer from '../../containers/CommentsContainer'
 
