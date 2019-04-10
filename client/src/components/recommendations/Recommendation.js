@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
-import { ListGroup, Button, ButtonToolbar } from 'react-bootstrap';
+import { Button, ButtonToolbar } from 'react-bootstrap';
+import Recommendation from './Recommendation'
+
 //import CommentsContainer from '../../containers/CommentsContainer'
 
 class Recommendation extends Component {
@@ -9,21 +11,21 @@ class Recommendation extends Component {
 
     return (
       <div>
-        <ListGroup.Item>
-          <h4>{recommendation.title}</h4>
-          <div>{recommendation.description}</div>
-          <ButtonToolbar>
-            <Button variant="info" size="sm">
-              Edit
-            </Button>
-            <Button onClick={() => this.props.deleteRecommendation(recommendation.id)} variant="danger" size="sm">
-              Delete
-            </Button>
-          </ButtonToolbar>
-        </ListGroup.Item>
+        <h4>{recommendation.title}</h4>
+        <div>Description: {recommendation.description}</div>
+        <ButtonToolbar>
+          <Button variant="info" size="sm">
+            Edit
+          </Button>
+          <Button onClick={() => this.props.deleteRecommendation(recommendation.id)} variant="danger" size="sm">
+            Delete
+          </Button>
+        </ButtonToolbar>
       </div>
     );
   }
 };
+
+const mapStateToProps = ({ recommendation }) => ({ recommendation })
 
 export default Recommendation;

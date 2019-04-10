@@ -1,12 +1,23 @@
 import React, { Component } from 'react';
-import Recommendation from './Recommendation'
-import { ListGroup } from 'react-bootstrap';
-
+import { ListGroup, ButtonToolbar, Button } from 'react-bootstrap';
 
 class Recommendations extends Component {
 
   renderRecommendations = () => {
-    return this.props.recommendations.map(recommendation => <Recommendation deleteRecommendation={this.props.deleteRecommendation} key={recommendation.id} recommendation={recommendation} />)
+    return this.props.recommendations.map(recommendation => {
+      return <ListGroup.Item>
+        <h4>{recommendation.title}</h4>
+        <div>{recommendation.description}</div>
+        <ButtonToolbar>
+          <Button variant="info" size="sm">
+            Edit
+          </Button>
+          <Button onClick={() => this.props.deleteRecommendation(recommendation.id)} variant="danger" size="sm">
+            Delete
+          </Button>
+        </ButtonToolbar>
+      </ListGroup.Item>
+    });
   }
 
   render() {

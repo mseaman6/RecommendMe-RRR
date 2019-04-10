@@ -20,7 +20,6 @@ const App = () => {
           <Route exact path="/recommendations" component={RecommendationsContainer} />
           <Route exact path="/recommendations/new" component={RecommendationInput} />
           <Route exact path="/categories" component={RecommendationInput} />
-          // <Route path="/recommendations/:id" component={RecommendationShow} />
           // <Route path="/recommendations/:id/edit" component={RecommendationInput} />
         </Switch>
       </div>
