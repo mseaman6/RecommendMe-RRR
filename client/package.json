@@ -4,10 +4,11 @@
   "private": true,
   "proxy": "http://localhost:3001/",
   "dependencies": {
+    "http-proxy-middleware": "^0.19.1",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
-    "react-router-dom": "^4.2.2",
     "react-redux": "^6.0.1",
+    "react-router-dom": "^4.2.2",
     "react-scripts": "2.1.8",
     "redux": "^4.0.1",
     "redux-mock-store": "^1.2.2",

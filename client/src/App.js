@@ -17,6 +17,7 @@ const App = () => {
         <Switch>
           <Route exact path="/recommendations" component={RecommendationsContainer} />
           <Route exact path="/recommendations/new" component={RecommendationInput} />
+          <Route exact path="/categories" component={RecommendationInput} />
         </Switch>
       </div>
     </Router>

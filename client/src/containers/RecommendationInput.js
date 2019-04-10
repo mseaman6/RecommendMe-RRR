@@ -35,7 +35,6 @@ class RecommendationInput extends Component {
   }
 
   renderCategories = () => {
-    debugger;
     return this.props.categories.map(category => <option value={category.id}>{category.name}</option>)
   }
 
