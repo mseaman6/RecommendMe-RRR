@@ -26,6 +26,7 @@ class RecommendationInput extends Component {
 
   handleOnSubmit(event) {
     event.preventDefault();
+    debugger;
     this.props.addRecommendation(this.state);
     this.setState({
       title: '',

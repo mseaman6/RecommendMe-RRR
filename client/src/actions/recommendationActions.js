@@ -2,7 +2,7 @@
 export function fetchRecommendations() {
   return (dispatch) => {
     dispatch({ type: 'LOADING_RECOMMENDATIONS' });
-    return fetch(`api/recommendations`)
+    return fetch(`/api/recommendations`)
       .then(response => response.json())
       .then(recommendations => dispatch({ type: 'FETCH_RECOMMENDATIONS', recommendations }))
       .catch(error => console.log(error))
@@ -20,7 +20,7 @@ export function fetchRecommendations() {
 
 export const deleteRecommendation = id => {
   return (dispatch) => {
-    return fetch(`api/recommendations/${id}`, {
+    return fetch(`/api/recommendations/${id}`, {
       method: "DELETE",
       headers: {
         "Content-Type": 'application/json'
@@ -38,7 +38,7 @@ export const deleteRecommendation = id => {
 
 export const addRecommendation = recommendation => {
   return (dispatch) => {
-    return fetch(`api/recommendations/`, {
+    return fetch(`/api/recommendations/`, {
       method: "POST",
       headers: {
         "Content-Type": 'application/json'
