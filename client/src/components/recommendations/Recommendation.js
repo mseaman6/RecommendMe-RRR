@@ -1,28 +1,24 @@
 import React, { Component } from 'react';
 import { Button, ButtonToolbar } from 'react-bootstrap';
-import { fetchRecommendations, deleteRecommendation } from '../../actions/recommendationActions';
-import { connect } from 'react-redux'
 import CommentsContainer from '../../containers/CommentsContainer'
 
 class Recommendation extends Component {
 
-  componentDidMount() {
-    this.props.fetchRecommendations();
+  recommendationSelector = () => {
+    debugger;
+    const { recommendations } = this.props.recommendations
+    const { recommendationID } = this.props.recommendationID;
+    console.log(recommendations)
   }
 
-
   render() {
-    const { recommendations } = this.props.recommendations;
-//    const { recommendationID } = this.props.match.params.id
-    console.log({recommendations})
     return (
       <div>
-
+        Recommendation Show Page
+        {this.recommendationSelector()}
       </div>
     );
   }
 };
 
-const mapStateToProps = ({ recommendations }) => ({ recommendations })
-
-export default connect(mapStateToProps, { fetchRecommendations, deleteRecommendation })(Recommendation)
+export default Recommendation
