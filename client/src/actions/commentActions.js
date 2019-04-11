@@ -7,6 +7,7 @@ export function fetchComments(rec_id) {
       .catch(error => console.log(error))
    };
 }
+//to refresh and fetch new comments list upon add or delete of comments
 
 export const deleteComment = (rec_id, id) => {
   return (dispatch) => {

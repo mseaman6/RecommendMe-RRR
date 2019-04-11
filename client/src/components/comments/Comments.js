@@ -12,7 +12,7 @@ class Comments extends Component {
   render() {
     return(
       <div>
-        <h4>Comments</h4>
+        <h4>Comments: </h4>
         <ListGroup>
           {this.renderComments()}
         </ListGroup>

@@ -6,7 +6,7 @@ class Comment extends Component {
 
   render() {
     const { comment } = this.props;
-
+    debugger;
     return(
       <ListGroup.Item key={comment.id} >
         {comment.text}
@@ -14,7 +14,7 @@ class Comment extends Component {
           <Button variant="outline-info" size="sm">
             Edit
           </Button>
-          <Button onClick={() => this.props.deleteComment(comment.id)} variant="outline-danger" size="sm">
+          <Button onClick={() => this.props.deleteComment(comment.recommendation.id, comment.id)} variant="outline-danger" size="sm">
             Delete
           </Button>
         </ButtonToolbar>

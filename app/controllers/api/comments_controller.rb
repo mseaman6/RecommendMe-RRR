@@ -2,11 +2,8 @@ class Api::CommentsController < ApplicationController
 
   def create
     @comment = Comment.create(comment_params)
-    @comment.recommendation_id = params[:recommendation_id]
     if @comment.save
-      @recommendation = Recommmendation.find(params[:recommendation_id])
-      @comments = @recommendation.comments
-      render json: @comments
+      render json: @comment
     else
       render json: { error: "The new comment failed to be created." }, status: 400
     end

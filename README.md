@@ -24,11 +24,10 @@ Things you may want to cover:
 * ...
 
 #next steps
--set up Recommendation show/edit page
+-set up Recommendation edit page
 -edit actions
+-check comments actions with add and delete for refreshing of comment list
 -determine what additional functionality desired for project submission
--set up additional components (containers and presentational)
--figure out routing issue
 -create README
--add in comments
+-categories page, with dropdown of the various categories showing only recommendations from that category
 -upvotes/downvotes?
