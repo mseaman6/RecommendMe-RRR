@@ -1,7 +1,7 @@
 export function fetchComments(rec_id) {
   return (dispatch) => {
     dispatch({ type: 'LOADING_COMMENTS' });
-    return fetch(`api/recommendations/${rec_id}/comments`)
+    return fetch(`/api/recommendations/${rec_id}/comments`)
       .then(response => response.json())
       .then(recommendations => dispatch({ type: 'FETCH_RECOMMENDATIONS', recommendations }))
       .catch(error => console.log(error))
@@ -10,7 +10,7 @@ export function fetchComments(rec_id) {
 
 export const deleteComment = (rec_id, id) => {
   return (dispatch) => {
-    return fetch(`api/recommendations/${rec_id}/comments/${id}`, {
+    return fetch(`/api/recommendations/${rec_id}/comments/${id}`, {
       method: "DELETE",
       headers: {
         "Content-Type": 'application/json'
@@ -28,7 +28,7 @@ export const deleteComment = (rec_id, id) => {
 
 export const addComment = (rec_id, comment) => {
   return (dispatch) => {
-    return fetch(`api/recommendations/${rec_id}/comments`, {
+    return fetch(`/api/recommendations/${rec_id}/comments`, {
       method: "POST",
       headers: {
         "Content-Type": 'application/json'
