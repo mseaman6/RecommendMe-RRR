@@ -1,5 +1,5 @@
 import React, { Component, Link } from 'react';
-import { Button } from 'react-bootstrap';
+import { Button, ListGroup } from 'react-bootstrap';
 import Comment from './Comment'
 
 
@@ -23,4 +23,4 @@ class Comments extends Component {
   }
 };
 
-export default Recommendations;
+export default Comments;
