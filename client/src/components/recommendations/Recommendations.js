@@ -1,12 +1,18 @@
-import React, { Component } from 'react';
+import React, { Component, Link } from 'react';
 import { ListGroup, ButtonToolbar, Button } from 'react-bootstrap';
+import Recommendation from './Recommendation'
+
 
 class Recommendations extends Component {
 
+  renderRecommendation = (recommendation) => {
+    return <Recommendation recommendation={recommendation} />
+  }
+
   renderRecommendations = () => {
     return this.props.recommendations.map(recommendation => {
-      return <ListGroup.Item>
-        <h4>{recommendation.title}</h4>
+      return <ListGroup.Item key={recommendation.id} >
+        {recommendation.title}
         <div>{recommendation.description}</div>
         <ButtonToolbar>
           <Button variant="info" size="sm">

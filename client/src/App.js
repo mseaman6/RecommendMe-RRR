@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import './App.css';
 import {
   BrowserRouter as Router,
@@ -8,7 +8,6 @@ import {
 import NavigBar from './containers/NavBar';
 import RecommendationsContainer from './containers/RecommendationsContainer';
 import RecommendationInput from './containers/RecommendationInput';
-import RecommendationShow from './containers/RecommendationShow';
 import Recommendation from './components/recommendations/Recommendation';
 
 

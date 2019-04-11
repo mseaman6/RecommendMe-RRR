@@ -11,10 +11,6 @@ class Api::RecommendationsController < ApplicationController
 
   def create
     @recommendation = Recommendation.create(recommendation_params)
-    @category = Category.find_or_create_by(:name => params[:recommendation][:category][:name].upcase)
-    if @category.save
-      @recommendation.category_id = @category.id
-    end
     if @recommendation.save
       render json: @recommendation
     else

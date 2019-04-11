@@ -26,8 +26,7 @@ class RecommendationInput extends Component {
 
   handleOnSubmit(event) {
     event.preventDefault();
-    debugger;
-    //this.props.addRecommendation(this.state);
+    this.props.addRecommendation(this.state);
     this.setState({
       title: '',
       description: '',
@@ -61,6 +60,7 @@ class RecommendationInput extends Component {
             <Form.Label>Description</Form.Label>
             <Form.Control
               as="textarea"
+              name="description"
               rows="3"
               placeholder="tell me more..."
               value={this.state.description}
@@ -71,7 +71,7 @@ class RecommendationInput extends Component {
             <Form.Label>Category</Form.Label>
             <Form.Control
               as="select"
-              name="category"
+              name="category_id"
               placeholder="Select a Category"
               value={this.state.category}
               onChange={(event) => this.handleOnChange(event)} >

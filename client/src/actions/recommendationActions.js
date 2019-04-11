@@ -9,6 +9,14 @@ export function fetchRecommendations() {
    };
 }
 
+// export function fetchRecommendation() {
+//   return (dispatch) => {
+//     return fetch(`api/recommendations/${recommendation_id}`)
+//       .then(response => response.json())
+//       .then(recommendation => dispatch({ type: 'FETCH_RECOMMENDATION', recommendation }))
+//       .catch(error => console.log(error))
+//    };
+// }
 
 export const deleteRecommendation = id => {
   return (dispatch) => {
@@ -29,7 +37,7 @@ export const deleteRecommendation = id => {
 
 
 export const addRecommendation = recommendation => {
-/*  return (dispatch) => {
+  return (dispatch) => {
     return fetch(`api/recommendations/`, {
       method: "POST",
       headers: {
@@ -44,5 +52,4 @@ export const addRecommendation = recommendation => {
     })
     .catch(error => console.log(error))
    };
-   */
 };
