@@ -1,8 +1,6 @@
 import React, { Component } from 'react'
 import Recommendations from '../components/recommendations/Recommendations'
 import { fetchRecommendations, deleteRecommendation, addRecommendation } from '../actions/recommendationActions';
-
-
 import { connect } from 'react-redux'
 
 class RecommendationsContainer extends Component {

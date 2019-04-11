@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { Button, ButtonToolbar } from 'react-bootstrap';
+import { fetchRecommendation } from '../actions/recommendationActions';
+import { connect } from 'react-redux'
 
 //import CommentsContainer from '../../containers/CommentsContainer'
 
@@ -20,11 +22,12 @@ class Recommendation extends Component {
             Delete
           </Button>
         </ButtonToolbar>
+        <CommentsContainer recommendationID={recommendation.id} />
       </div>
     );
   }
 };
 
-const mapStateToProps = ({ recommendation }) => ({ recommendation })
+const mapStateToProps = ({ recommendations }) => ({ recommendations })
 
-export default Recommendation;
+export default connect(mapStateToProps, { fetchRecommendation })(Recommendation)
