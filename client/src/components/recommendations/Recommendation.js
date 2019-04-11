@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Button, ButtonToolbar } from 'react-bootstrap';
-import { fetchRecommendation } from '../actions/recommendationActions';
+import { fetchRecommendations } from '../../actions/recommendationActions';
 import { connect } from 'react-redux'
 import CommentsContainer from '../../containers/CommentsContainer'
 
@@ -27,6 +27,6 @@ class Recommendation extends Component {
   }
 };
 
-const mapStateToProps = ({ recommendations }) => ({ recommendations })
+const mapStateToProps = ({ recommendation }) => ({ recommendation })
 
-export default connect(mapStateToProps, { fetchRecommendation })(Recommendation)
+export default connect(mapStateToProps, { fetchRecommendations })(Recommendation)

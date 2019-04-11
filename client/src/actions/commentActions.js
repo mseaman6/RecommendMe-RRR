@@ -1,4 +1,4 @@
-export function fetchComments() {
+export function fetchComments(rec_id) {
   return (dispatch) => {
     dispatch({ type: 'LOADING_COMMENTS' });
     return fetch(`api/recommendations/${rec_id}/comments`)

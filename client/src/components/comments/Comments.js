@@ -6,9 +6,7 @@ import Comment from './Comment'
 class Comments extends Component {
 
   renderComments = () => {
-    return this.props.comments.map(comment => {
-      <Comment comment={comment} />
-    });
+    return this.props.comments.map( comment => <Comment key={comment.id} comment={comment} deleteComment={this.props.deleteComment} />);
   }
 
   render() {
