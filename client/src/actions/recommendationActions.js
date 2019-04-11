@@ -9,15 +9,6 @@ export function fetchRecommendations() {
    };
 }
 
-// export function fetchRecommendation() {
-//   return (dispatch) => {
-//     return fetch(`api/recommendations/${recommendation_id}`)
-//       .then(response => response.json())
-//       .then(recommendation => dispatch({ type: 'FETCH_RECOMMENDATION', recommendation }))
-//       .catch(error => console.log(error))
-//    };
-// }
-
 export const deleteRecommendation = id => {
   return (dispatch) => {
     return fetch(`/api/recommendations/${id}`, {
