@@ -5,7 +5,8 @@ import manageCategory from './manageCategory'
 
 const rootReducer = combineReducers({
   recommendations: manageRecommendation,
-  categories: manageCategory
+  categories: manageCategory,
+  comments: manageComment
 });
 
 export default rootReducer;

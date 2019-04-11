@@ -2,8 +2,7 @@ import React, { Component } from 'react';
 import { Button, ButtonToolbar } from 'react-bootstrap';
 import { fetchRecommendation } from '../actions/recommendationActions';
 import { connect } from 'react-redux'
-
-//import CommentsContainer from '../../containers/CommentsContainer'
+import CommentsContainer from '../../containers/CommentsContainer'
 
 class Recommendation extends Component {
 
@@ -22,7 +21,7 @@ class Recommendation extends Component {
             Delete
           </Button>
         </ButtonToolbar>
-        <CommentsContainer recommendationID={recommendation.id} />
+        <CommentsContainer recommendationID={recommendation.id} comments={recommendation.comments} />
       </div>
     );
   }

@@ -5,10 +5,6 @@ import Recommendation from './Recommendation'
 
 class Recommendations extends Component {
 
-  renderRecommendation = (recommendation) => {
-    return <Recommendation recommendation={recommendation} />
-  }
-
   renderRecommendations = () => {
     return this.props.recommendations.map(recommendation => {
       return <ListGroup.Item key={recommendation.id} >
