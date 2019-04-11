@@ -4,20 +4,34 @@ import CommentsContainer from '../../containers/CommentsContainer'
 
 class Recommendation extends Component {
 
-  recommendationSelector = () => {
-    debugger;
-    const { recommendations } = this.props.recommendations
-    const { recommendationID } = this.props.recommendationID;
-    console.log(recommendations)
+
+  selectRecommendation = (recommendations) => {
+    const recommendationID = this.props.recommendationID;
+    return recommendations.filter(recommendation => recommendation.id === parseInt(recommendationID));
   }
 
   render() {
-    return (
-      <div>
-        Recommendation Show Page
-        {this.recommendationSelector()}
-      </div>
-    );
+    const recommendations = this.props.recommendations
+    const recommendation = this.selectRecommendation(recommendations)[0]
+    if (recommendation) {
+      return (
+        <div>
+          <h2>{recommendation.title}</h2>
+          <div>Description: {recommendation.description}</div>
+          <ButtonToolbar>
+            <Button variant="info" size="sm">
+              Edit
+            </Button>
+            <Button onClick={() => this.props.deleteRecommendation(recommendation.id)} variant="danger" size="sm">
+              Delete
+            </Button>
+          </ButtonToolbar>
+          <CommentsContainer recommendationID={recommendation.id} comments={recommendation.comments} />
+        </div>
+      );
+    } else {
+      return null
+    }
   }
 };
 

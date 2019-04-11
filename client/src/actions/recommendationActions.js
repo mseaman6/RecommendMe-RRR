@@ -29,7 +29,7 @@ export const deleteRecommendation = id => {
 
 export const addRecommendation = recommendation => {
   return (dispatch) => {
-    return fetch(`/api/recommendations/`, {
+    return fetch(`/api/recommendations`, {
       method: "POST",
       headers: {
         "Content-Type": 'application/json'

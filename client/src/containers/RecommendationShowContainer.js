@@ -9,7 +9,6 @@ class RecommendationShowContainer extends Component {
   }
 
   render() {
-    debugger;
     return (
       <div>
         <Recommendation recommendations={this.props.recommendations} deleteRecommendation={this.props.deleteRecommendation} recommendationID={this.props.match.params.id} />
