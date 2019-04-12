@@ -5,6 +5,17 @@ import { fetchCategories } from '../actions/categoryActions';
 import { connect } from 'react-redux'
 
 class NavigationBar extends React.Component {
+
+  componentDidMount() {
+    this.props.fetchCategories();
+  }
+
+  renderCategories = () => {
+    if (this.props.categories.length > 0) {
+      return this.props.categories.map(category => <NavDropdown.Item key={category.id} href={`/categories/${category.id}`}>{category.name}</NavDropdown.Item>)
+    }
+  }
+
   render() {
     return (
       <div className="container light-fade">
@@ -16,10 +27,7 @@ class NavigationBar extends React.Component {
                 <Nav.Link href="/recommendations">Recommendations</Nav.Link>
                 <Nav.Link href="/recommendations/new">Create Recommendation</Nav.Link>
                 <NavDropdown title="Categories" id="basic-nav-dropdown">
-
-                  <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
-                  <NavDropdown.Item href="#action/3.2">Another action</NavDropdown.Item>
-                  <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
+                  {this.renderCategories()}
                   <NavDropdown.Divider />
                   <NavDropdown.Item href="#action/3.4">Separated link</NavDropdown.Item>
                 </NavDropdown>
