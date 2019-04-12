@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { addCategory } from '../actions/categoryActions';
+import { addCategory } from '../actions/categoriesActions';
 import { FormControl, Button, InputGroup } from 'react-bootstrap';
 
 import { connect } from 'react-redux'

@@ -1,9 +1,10 @@
 
 export const fetchCategory = id => {
+  debugger;
   return (dispatch) => {
     return fetch(`api/categories/${id}`)
       .then(response => response.json())
-      .then(recommendation => dispatch({ type: 'FETCH_CATEGORY', category }))
+      .then(category => dispatch({ type: 'FETCH_CATEGORY', category }))
       .catch(error => console.log(error))
    };
 }
