@@ -12,11 +12,12 @@ class RecommendationInput extends Component {
     title: '',
     description: '',
     category_id: '',
+    titleAlert: false,
+    categoryAlert: false
   }
 
   componentDidMount() {
     this.props.fetchCategories();
-    console.log("Categories Fetched")
   }
 
   handleOnChange(event) {
@@ -26,13 +27,42 @@ class RecommendationInput extends Component {
   }
 
   handleOnSubmit(event) {
-
+    event.preventDefault();
+    if (this.state.title && this.state.category_id) {
+      debugger;
+      this.props.addRecommendation({
+        title: this.state.title,
+        description: this.state.description,
+        category_id: this.state.category_id,
+      });
+      this.setState({
+        title: '',
+        description: '',
+        category_id: '',
+        titleAlert: false,
+        categoryAlert: false
+      });
+    } else if (!this.state.title && !this.state.category_id) {
+      this.setState({
+        titleAlert: true,
+        categoryAlert: true
+       });
+    } else if (!this.state.title) {
+      this.setState({
+        titleAlert: true,
+        categoryAlert: false
+       });
+    } else if (!this.state.category_id) {
+      this.setState({
+        titleAlert: false,
+        categoryAlert: true
+       });
+    }
   }
 
   renderCategories = () => {
-    debugger;
     if (this.props.categories.length > 0) {
-      return this.props.categories.map(category => <option value={category.id}>{category.name}</option>)
+      return this.props.categories.map(category => <option key={category.id} value={category.id}>{category.name}</option>)
     }
   }
 
@@ -40,6 +70,8 @@ class RecommendationInput extends Component {
     return (
       <div>
         <h2>Create a Recommendation:</h2>
+        <Alert className="errorTitle" variant="danger" show={this.state.titleAlert} >A title is required.</Alert>
+        <Alert className="errorTitle" variant="danger" show={this.state.categoryAlert}>You are required to select a category from the dropdown menu.</Alert>
         <Form onSubmit={(event) => this.handleOnSubmit(event)}>
           <Form.Group controlId="formTitle">
             <Form.Label>Title</Form.Label>
@@ -73,7 +105,8 @@ class RecommendationInput extends Component {
               placeholder="Select a Category"
               value={this.state.category}
               onChange={(event) => this.handleOnChange(event)} >
-            {this.renderCategories()}
+              <option key={0}></option>
+              {this.renderCategories()}
             </Form.Control>
           </Form.Group>
           or
