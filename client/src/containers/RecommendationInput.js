@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-//import CategoryInput from './CategoryInput'
+import CategoryInput from './CategoryInput'
 import { addRecommendation } from '../actions/recommendationActions';
 import { fetchCategories } from '../actions/categoryActions';
 import { Form, Button } from 'react-bootstrap';
@@ -11,7 +11,7 @@ class RecommendationInput extends Component {
   state = {
     title: '',
     description: '',
-    category_id: ''
+    category_id: '',
   }
 
   componentDidMount() {
@@ -31,7 +31,7 @@ class RecommendationInput extends Component {
     this.setState({
       title: '',
       description: '',
-      category_id: ''
+      category_id: '',
     });
   }
 
@@ -69,7 +69,7 @@ class RecommendationInput extends Component {
           </Form.Group>
 
           <Form.Group controlId="formCategorySelect">
-            <Form.Label>Category</Form.Label>
+            <Form.Label>Select a Category</Form.Label>
             <Form.Control
               as="select"
               name="category_id"
@@ -79,6 +79,8 @@ class RecommendationInput extends Component {
             {this.renderCategories()}
             </Form.Control>
           </Form.Group>
+          or
+          <CategoryInput />
           <Button variant="primary" type="submit">
             Submit
           </Button>
