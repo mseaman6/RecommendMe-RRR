@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import CategoryInput from './CategoryInput'
 import { addRecommendation } from '../actions/recommendationActions';
 import { fetchCategories } from '../actions/categoryActions';
-import { Form, Button } from 'react-bootstrap';
+import { Form, Button, Alert } from 'react-bootstrap';
 
 import { connect } from 'react-redux'
 
@@ -25,18 +25,32 @@ class RecommendationInput extends Component {
   }
 
   handleOnSubmit(event) {
-    event.preventDefault();
-    debugger;
-    this.props.addRecommendation(this.state);
-    this.setState({
-      title: '',
-      description: '',
-      category_id: '',
-    });
+  //   event.preventDefault();
+  //   if (this.state.title && this.state.category_id) {
+  //     debugger;
+  //     this.props.addRecommendation(this.state);
+  //     this.setState({
+  //       title: '',
+  //       description: '',
+  //       category_id: '',
+  //     });
+  //   } else if (!this.state.title) {
+  //     console.log("Title is required.");
+  //     return (
+  //       <Alert variant="danger">A title is required.</Alert>
+  //     );
+  //   } else if (!this.state.category_id) {
+  //     return <Alert variant="danger">You are required to select a category from the dropdown menu.</Alert>
+  //     console.log("You need to select a category from the list.")
+  // } else {
+  //     return <Alert variant="warning">There was an issue submitting your request, please try again.</Alert>
+  //   }
   }
 
   renderCategories = () => {
-    return this.props.categories.map(category => <option value={category.id}>{category.name}</option>)
+    if (this.props.categories.length > 0) {
+      return this.props.categories.map(category => <option value={category.id}>{category.name}</option>)
+    }
   }
 
   render() {

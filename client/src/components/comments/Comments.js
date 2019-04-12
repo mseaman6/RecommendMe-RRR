@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Button, ListGroup } from 'react-bootstrap';
+import { ListGroup } from 'react-bootstrap';
 import Comment from './Comment'
 
 

@@ -1,10 +1,9 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
 import { Navbar, Nav } from 'react-bootstrap';
 
 const NavigBar = () => {
   return (
-    <div className="navbar" className="container light-fade">
+    <div className="container light-fade">
       <Navbar bg="light" expand="lg">
         <Navbar.Brand href="/">RecommendMe</Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />

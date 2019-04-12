@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { addCategory } from '../actions/categoryActions';
-import { Form, Button, Row, Col } from 'react-bootstrap';
+import { FormControl, Button, InputGroup } from 'react-bootstrap';
 
 import { connect } from 'react-redux'
 
@@ -28,23 +28,19 @@ class CategoryInput extends Component {
   render() {
     return (
       <div>
-      <Form>
-        <Form.Row>
-          <Form.Group as={Col} controlId="formCategoryCreate">
-            <Form.Control
-                type="text"
-                name="category"
-                value={this.state.category}
-                placeholder="or create a new category"
-                onChange={(event) => this.handleOnChange(event)} />
-          </Form.Group>
-          <Form.Group as={Col} controlId="formCategorySubmit">
-            <Button onClick={(event) => this.handleCategorySubmit(event)} variant="light" >
-              Create New Category
-            </Button>
-          </Form.Group>
-        </Form.Row>
-      </Form>
+      <InputGroup className="mb-3">
+        <FormControl
+          type="text"
+          name="category"
+          value={this.state.category}
+          placeholder="create a new category"
+          onChange={(event) => this.handleOnChange(event)} />
+        <InputGroup.Append>
+          <Button onClick={(event) => this.handleCategorySubmit(event)} variant="light">
+            Create New Category
+          </Button>
+        </InputGroup.Append>
+      </InputGroup>
       </div>
     );
   }

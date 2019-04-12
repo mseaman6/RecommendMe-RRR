@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { addComment } from '../../actions/commentActions';
 import { Form, Button } from 'react-bootstrap';
 
 

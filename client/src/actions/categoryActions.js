@@ -20,7 +20,7 @@ export const addCategory = category => {
       headers: {
         "Content-Type": 'application/json'
       },
-      body: JSON.stringify({category: category})
+      body: JSON.stringify({name: category})
     })
     .then(response => response.json())
     .then(category => {

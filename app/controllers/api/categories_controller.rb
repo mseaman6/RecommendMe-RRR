@@ -12,7 +12,7 @@ class Api::CategoriesController < ApplicationController
 
   def create
     @category = Category.find_or_create_by(:name => params[:name].upcase)
-    if @cateogry && @category.save
+    if @category && @category.save
       render json: @category
     elsif @category
       render json: {error: "That category already exists."}
