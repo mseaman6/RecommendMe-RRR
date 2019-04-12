@@ -6,7 +6,6 @@ class Comment extends Component {
 
   render() {
     const { comment } = this.props;
-    debugger;
     return(
       <ListGroup.Item key={comment.id} >
         {comment.text}

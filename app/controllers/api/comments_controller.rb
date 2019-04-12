@@ -12,11 +12,9 @@ class Api::CommentsController < ApplicationController
   def destroy
     @comment = Comment.find(params[:id])
     if @comment.destroy
-      @recommendation = Recommmendation.find(params[:recommendation_id])
-      @comments = @recommendation.comments
-      render json: @comments
+      render json: Comment.where("recommendation_id = ?", (params[:category_id]))
     else
-      render json: { error: "The was a problem deleting this comment." }, status: 400
+      render json: { error: "There was a problem deleting this comment." }, status: 400
     end
   end
 

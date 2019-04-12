@@ -28,7 +28,7 @@ class CommentInput extends Component {
   render() {
     return (
       <div>
-        <h2>Create a Comment:</h2>
+        <h4>Create a Comment:</h4>
         <Form onSubmit={(event) => this.handleOnSubmit(event)}>
           <Form.Group controlId="formText">
             <Form.Label>Comment</Form.Label>

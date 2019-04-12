@@ -1,4 +1,5 @@
-import React, { Component, Link } from 'react';
+import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import { ListGroup, ButtonToolbar, Button } from 'react-bootstrap';
 import Recommendation from './Recommendation'
 
@@ -8,7 +9,7 @@ class Recommendations extends Component {
   renderRecommendations = () => {
     return this.props.recommendations.map(recommendation => {
       return <ListGroup.Item key={recommendation.id} >
-        {recommendation.title}
+        <Link to={'/recommendations/'+recommendation.id}>{recommendation.title}</Link>
         <div>{recommendation.description}</div>
         <ButtonToolbar>
           <Button variant="info" size="sm">
