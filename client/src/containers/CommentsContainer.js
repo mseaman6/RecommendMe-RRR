@@ -7,13 +7,16 @@ import { connect } from 'react-redux'
 class CommentsContainer extends Component {
 
   render() {
-
-    return (
-      <div>
-        <Comments comments={this.props.comments} deleteComment={this.props.deleteComment} />
-        <CommentInput addComment={this.props.addComment} recID={this.props.recommendationID} />
-      </div>
-    )
+    if (this.props.comments) {
+      return (
+        <div>
+          <Comments comments={this.props.comments} deleteComment={this.props.deleteComment} />
+          <CommentInput addComment={this.props.addComment} recID={this.props.recommendationID} />
+        </div>
+      )
+    } else {
+      return null
+    }
   }
 }
 
