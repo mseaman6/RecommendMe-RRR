@@ -12,7 +12,7 @@ class CategoryRecommendationsContainer extends Component {
 
     return (
       <div>
-        <Category recommendations={this.props.recommendations} />
+        <Category recommendations={this.props.recommendations} categoryID={this.props.match.params.id}/>
       </div>
     )
   }

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import CategoryInput from './CategoryInput'
-import { addRecommendation } from '../actions/recommendationActions';
+import { fetchRecommendations, deleteRecommendation, addRecommendation } from '../actions/recommendationActions';
 import { fetchCategories } from '../actions/categoryActions';
 import { Form, Button, Alert } from 'react-bootstrap';
 
@@ -17,7 +17,29 @@ class RecommendationInput extends Component {
   }
 
   componentDidMount() {
+    this.props.fetchRecommendations();
     this.props.fetchCategories();
+    if (this.props.match.params.id) {
+      this.selectRecommendation(this.props.recommendations);
+    }
+  }
+
+  selectRecommendation = () => {
+    const recommendationID = this.props.match.params.id;
+    debugger;
+    if (this.props.recommendations.length > 0) {
+      const rec = this.props.recommendations.filter(recommendation => recommendation.id === parseInt(recommendationID));
+      this.setRecommendation(rec)
+    }
+  }
+
+  setRecommendation = (recommendation) => {
+    debugger;
+    this.setState({
+      title: recommendation.title,
+      description: recommendation.description,
+      category_id: recommendation.category_id,
+    });
   }
 
   handleOnChange(event) {
@@ -120,6 +142,11 @@ class RecommendationInput extends Component {
   }
 };
 
-const mapStateToProps = ({ categories }) => ({ categories })
+const mapStateToProps = ( state ) => {
+  return ({
+    recommendations: state.recommendations,
+    categories: state.categories
+  })
+}
 
-export default connect(mapStateToProps, { addRecommendation, fetchCategories })(RecommendationInput)
+export default connect(mapStateToProps, { fetchRecommendations, addRecommendation, deleteRecommendation, fetchCategories })(RecommendationInput)

@@ -28,8 +28,6 @@ class NavigationBar extends React.Component {
                 <Nav.Link href="/recommendations/new">Create Recommendation</Nav.Link>
                 <NavDropdown title="Categories" id="basic-nav-dropdown">
                   {this.renderCategories()}
-                  <NavDropdown.Divider />
-                  <NavDropdown.Item href="#action/3.4">Separated link</NavDropdown.Item>
                 </NavDropdown>
               </Nav>
             </Navbar.Collapse>
