@@ -4,10 +4,10 @@ import { fetchCategory } from '../actions/categoryActions';
 import { connect } from 'react-redux'
 
 class CategoryRecommendationsContainer extends Component {
+
   componentDidMount() {
     const catID = parseInt(this.props.match.params.id)
     this.props.fetchCategory(catID)
-    debugger;
   }
 
   render() {

@@ -5,13 +5,15 @@ import { Link } from 'react-router-dom';
 class Category extends Component {
 
   renderRecommendations = () => {
-    const recommendations = this.props.category.recommendations;
-    return recommendations.map(recommendation => {
-      return <ListGroup.Item key={recommendation.id} >
-        <Link to={'/recommendations/'+recommendation.id}>{recommendation.title}</Link>
-        <div>{recommendation.description}</div>
-      </ListGroup.Item>
-    });
+    if (this.props.category.recommendations) {
+      const recommendations = this.props.category.recommendations;
+      return recommendations.map(recommendation => {
+        return <ListGroup.Item key={recommendation.id} >
+          <Link to={'/recommendations/'+recommendation.id}>{recommendation.title}</Link>
+          <div>{recommendation.description}</div>
+        </ListGroup.Item>
+      });
+    }
   }
 
   render() {
