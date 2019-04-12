@@ -1,11 +1,13 @@
 import React, { Component } from 'react'
 import Category from '../components/categories/Category'
-import { fetchRecommendations } from '../actions/recommendationActions';
+import { fetchRecommendations } from '../actions/recommendationsActions';
+import { fetchCategories } from '../actions/categorieActions';
 import { connect } from 'react-redux'
 
 class CategoryRecommendationsContainer extends Component {
   componentDidMount() {
     this.props.fetchRecommendations();
+    this.props.fetchCategories
   }
 
   render() {
@@ -18,6 +20,6 @@ class CategoryRecommendationsContainer extends Component {
   }
 }
 
-const mapStateToProps = ({ recommendations }) => ({ recommendations })
+const mapStateToProps = ({ category }) => ({ category })
 
-export default connect(mapStateToProps, { fetchRecommendations })(CategoryRecommendationsContainer)
+export default connect(mapStateToProps, { fetchCategory )(CategoryRecommendationsContainer)

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Navbar, Nav, NavDropdown } from 'react-bootstrap';
-import { fetchCategories } from '../actions/categoryActions';
+import { fetchCategories } from '../actions/categoriesActions';
 
 import { connect } from 'react-redux'
 

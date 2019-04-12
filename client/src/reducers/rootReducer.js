@@ -1,12 +1,16 @@
 import { combineReducers } from "redux";
+import manageRecommendations from './manageRecommendations'
+import manageCategories from './manageCategories'
+import manageComments from './manageComments'
 import manageRecommendation from './manageRecommendation'
 import manageCategory from './manageCategory'
-import manageComment from './manageComment'
 
 const rootReducer = combineReducers({
-  recommendations: manageRecommendation,
-  categories: manageCategory,
-  comments: manageComment,
+  recommendations: manageRecommendations,
+  categories: manageCategories,
+  comments: manageComments,
+  recommendation: manageRecommendation,
+  category: manageCategory
 });
 
 export default rootReducer;

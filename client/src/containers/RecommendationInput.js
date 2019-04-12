@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import CategoryInput from './CategoryInput'
-import { fetchRecommendations, deleteRecommendation, addRecommendation } from '../actions/recommendationActions';
-import { fetchCategories } from '../actions/categoryActions';
+import { fetchRecommendations, deleteRecommendation, addRecommendation } from '../actions/recommendationsActions';
+import { fetchCategories } from '../actions/categoriesActions';
 import { Form, Button, Alert } from 'react-bootstrap';
 
 import { connect } from 'react-redux'
