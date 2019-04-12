@@ -16,6 +16,7 @@ class RecommendationInput extends Component {
 
   componentDidMount() {
     this.props.fetchCategories();
+    console.log("Categories Fetched")
   }
 
   handleOnChange(event) {
@@ -25,29 +26,11 @@ class RecommendationInput extends Component {
   }
 
   handleOnSubmit(event) {
-  //   event.preventDefault();
-  //   if (this.state.title && this.state.category_id) {
-  //     debugger;
-  //     this.props.addRecommendation(this.state);
-  //     this.setState({
-  //       title: '',
-  //       description: '',
-  //       category_id: '',
-  //     });
-  //   } else if (!this.state.title) {
-  //     console.log("Title is required.");
-  //     return (
-  //       <Alert variant="danger">A title is required.</Alert>
-  //     );
-  //   } else if (!this.state.category_id) {
-  //     return <Alert variant="danger">You are required to select a category from the dropdown menu.</Alert>
-  //     console.log("You need to select a category from the list.")
-  // } else {
-  //     return <Alert variant="warning">There was an issue submitting your request, please try again.</Alert>
-  //   }
+
   }
 
   renderCategories = () => {
+    debugger;
     if (this.props.categories.length > 0) {
       return this.props.categories.map(category => <option value={category.id}>{category.name}</option>)
     }
