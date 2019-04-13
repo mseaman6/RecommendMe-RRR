@@ -11,6 +11,7 @@ import RecommendationInput from './containers/RecommendationInput';
 import RecommendationShowContainer from './containers/RecommendationShowContainer';
 import CategoryRecommendationsContainer from './containers/CategoryRecommendationsContainer';
 import CategoryInput from './containers/CategoryInput';
+import Home from './components/Home';
 
 
 const App = () => {
@@ -20,6 +21,7 @@ const App = () => {
         <NavigBar />
         <div>
           <Switch>
+            <Route exact path="/" component={Home} />
             <Route exact path="/recommendations" component={RecommendationsContainer} />
             <Route exact path="/recommendations/new" component={RecommendationInput} />
             <Route exact path="/recommendations/:id" component={RecommendationShowContainer} />
