@@ -1,6 +1,5 @@
 export function fetchComments(rec_id) {
   return (dispatch) => {
-    dispatch({ type: 'LOADING_COMMENTS' });
     return fetch(`/api/recommendations/${rec_id}/comments`)
       .then(response => response.json())
       .then(recommendations => dispatch({ type: 'FETCH_RECOMMENDATIONS', recommendations }))

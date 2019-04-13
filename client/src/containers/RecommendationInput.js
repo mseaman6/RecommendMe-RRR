@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import CategoryInput from './CategoryInput'
-import { fetchRecommendations, deleteRecommendation, addRecommendation } from '../actions/recommendationsActions';
+import { fetchRecommendations, deleteRecommendation, addRecommendation, editRecommendation } from '../actions/recommendationsActions';
 import { fetchCategories } from '../actions/categoriesActions';
 import { Form, Button, Alert } from 'react-bootstrap';
 
@@ -12,29 +12,38 @@ class RecommendationInput extends Component {
     title: '',
     description: '',
     category_id: '',
+    recommendation_id: '',
     titleAlert: false,
-    categoryAlert: false
+    categoryAlert: false,
+    loadRecData: false,
+    editStatus: false
   }
 
   componentDidMount() {
     this.props.fetchRecommendations();
     this.props.fetchCategories();
+    if (this.props.match.params.id) {
+      this.setState({loadRecData: true, editStatus: true});
+    }
+  }
+
+  componentWillUnmount() {
+    this.setState({loadRecData: false, editStatus: false});
   }
 
   selectRecommendation = (recommendations) => {
     const recommendationID = this.props.match.params.id;
-    if (recommendationID && recommendations.length > 0) {
-      const rec = recommendations.filter(recommendation => recommendation.id === parseInt(recommendationID));
-      this.setRecommendation(rec[0])
-    }
+    const rec = recommendations.filter(recommendation => recommendation.id === parseInt(recommendationID));
+    this.setRecommendation(rec[0])
   }
 
   setRecommendation = (recommendation) => {
-    debugger; //need to figure out how to remove from render so not repeated calls to setState
     this.setState({
       title: recommendation.title,
       description: recommendation.description,
       category_id: recommendation.category_id,
+      recommendation_id: recommendation.id,
+      loadRecData: false
     });
   }
 
@@ -47,11 +56,20 @@ class RecommendationInput extends Component {
   handleOnSubmit(event) {
     event.preventDefault();
     if (this.state.title && this.state.category_id) {
-      this.props.addRecommendation({
-        title: this.state.title,
-        description: this.state.description,
-        category_id: this.state.category_id,
-      });
+      debugger;
+      if (this.state.editStatus) {
+        this.props.editRecommendation(this.state.recommendation_id, {
+          title: this.state.title,
+          description: this.state.description,
+          category_id: this.state.category_id,
+        })
+      } else {
+        this.props.addRecommendation({
+          title: this.state.title,
+          description: this.state.description,
+          category_id: this.state.category_id,
+        });
+      }
       this.setState({
         title: '',
         description: '',
@@ -59,6 +77,7 @@ class RecommendationInput extends Component {
         titleAlert: false,
         categoryAlert: false
       });
+      //add a redirect here to show page...
     } else if (!this.state.title && !this.state.category_id) {
       this.setState({
         titleAlert: true,
@@ -83,11 +102,18 @@ class RecommendationInput extends Component {
     }
   }
 
+  submitText = () => this.state.editStatus ?  "Update Recommendation" : "Submit"
+
+  titleText = () => this.state.editStatus ?  "Edit Recommendation" : "Create a Recommendation"
+
   render() {
-    this.selectRecommendation(this.props.recommendations);
+    let recommendations = this.props.recommendations;
+    if (recommendations.length > 0 && this.state.loadRecData) {
+      this.selectRecommendation(recommendations)
+    }
     return (
       <div className="rec-body">
-        <h2>Create a Recommendation:</h2>
+        <h2>{this.titleText()}</h2>
         <Alert className="errorTitle" variant="danger" show={this.state.titleAlert} >A title is required.</Alert>
         <Alert className="errorTitle" variant="danger" show={this.state.categoryAlert}>You are required to select a category from the dropdown menu.</Alert>
         <Form onSubmit={(event) => this.handleOnSubmit(event)}>
@@ -130,7 +156,7 @@ class RecommendationInput extends Component {
           or
           <CategoryInput />
           <Button variant="primary" type="submit">
-            Submit
+            {this.submitText()}
           </Button>
         </Form>
       </div>
@@ -145,4 +171,4 @@ const mapStateToProps = ( state ) => {
   })
 }
 
-export default connect(mapStateToProps, { fetchRecommendations, addRecommendation, deleteRecommendation, fetchCategories })(RecommendationInput)
+export default connect(mapStateToProps, { fetchRecommendations, addRecommendation, deleteRecommendation, editRecommendation, fetchCategories })(RecommendationInput)

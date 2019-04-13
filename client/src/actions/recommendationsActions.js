@@ -1,7 +1,6 @@
 
 export function fetchRecommendations() {
   return (dispatch) => {
-    dispatch({ type: 'LOADING_RECOMMENDATIONS' });
     return fetch(`/api/recommendations`)
       .then(response => response.json())
       .then(recommendations => dispatch({ type: 'FETCH_RECOMMENDATIONS', recommendations }))
@@ -40,6 +39,24 @@ export const addRecommendation = recommendation => {
     .then(recommendation => {
       console.log(recommendation)
       dispatch({ type: 'CREATE_RECOMMENDATION', recommendation })
+    })
+    .catch(error => console.log(error))
+   };
+};
+
+export const editRecommendation = (rec_id, recommendation) => {
+  return (dispatch) => {
+    return fetch(`/api/recommendations/${rec_id}`, {
+      method: "PUT",
+      headers: {
+        "Content-Type": 'application/json'
+      },
+      body: JSON.stringify({recommendation: recommendation})
+    })
+    .then(response => response.json())
+    .then(recommendation => {
+      console.log(recommendation)
+      dispatch({ type: 'UPDATE_RECOMMENDATION', recommendation })
     })
     .catch(error => console.log(error))
    };

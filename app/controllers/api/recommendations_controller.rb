@@ -19,6 +19,16 @@ class Api::RecommendationsController < ApplicationController
     render json: @recommendation
   end
 
+  def update
+    @recommendation = Recommendation.find(params[:id])
+    @recommendation.update(recommendation_params)
+    if @recommendation.save
+      render json: @recommendation
+    else
+      render json: { error: "The recommendation failed to be edited." }, status: 400
+    end
+  end
+
   def destroy
     @recommendation = Recommendation.find(params[:id])
     if @recommendation.destroy

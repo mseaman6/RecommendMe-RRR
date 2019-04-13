@@ -1,7 +1,6 @@
 
 export function fetchCategories() {
    return (dispatch) => {
-    dispatch({ type: 'LOADING_CATEGORIES' });
     return fetch(`/api/categories`)
       .then(response => response.json())
       .then(categories => {
@@ -13,7 +12,6 @@ export function fetchCategories() {
 }
 
 export const addCategory = category => {
-  console.log(category)
   return (dispatch) => {
     return fetch(`/api/categories/`, {
       method: "POST",
