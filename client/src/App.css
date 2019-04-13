@@ -11,6 +11,10 @@ img, video, audio, iframe, table form {
   margin: 25px;
 }
 
+.lower-margin {
+  margin-bottom: 25px;
+}
+
 .row {
   margin-bottom: 25px;
   margin-top: 25px;

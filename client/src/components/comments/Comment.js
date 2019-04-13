@@ -8,11 +8,8 @@ class Comment extends Component {
     const { comment } = this.props;
     return(
       <ListGroup.Item key={comment.id} >
-        {comment.text}
+        <div className="small-margin">{comment.text}</div>
         <ButtonToolbar>
-          <Button variant="outline-info" size="sm">
-            Edit
-          </Button>
           <Button onClick={() => this.props.deleteComment(comment.recommendation.id, comment.id)} variant="outline-danger" size="sm">
             Delete
           </Button>

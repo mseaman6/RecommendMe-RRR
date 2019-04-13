@@ -10,7 +10,9 @@ class CommentsContainer extends Component {
     if (this.props.comments) {
       return (
         <div>
-          <Comments comments={this.props.comments} deleteComment={this.props.deleteComment} />
+          <div className="lower-margin">
+            <Comments comments={this.props.comments} deleteComment={this.props.deleteComment} />
+          </div>
           <CommentInput addComment={this.props.addComment} recID={this.props.recommendationID} />
         </div>
       )

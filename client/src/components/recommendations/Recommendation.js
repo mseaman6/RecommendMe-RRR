@@ -9,7 +9,7 @@ class Recommendation extends Component {
     if (recommendation) {
       return(
         <ListGroup.Item key={recommendation.id} >
-          <Link to={'/recommendations/'+recommendation.id}>{recommendation.title}</Link>
+          <Link to={'/recommendations/'+recommendation.id}>{recommendation.title}</Link> - <Link to={'/categories/'+recommendation.category.id}>{recommendation.category.name}</Link>
           <div>{recommendation.description}</div>
         </ListGroup.Item>
       );
