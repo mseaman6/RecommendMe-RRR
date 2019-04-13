@@ -7,6 +7,11 @@ img, video, audio, iframe, table form {
 
 /*////// LAYOUT STYLES //////*/
 
+.App {
+  margin-left: 25px;
+  margin-right: 25px;
+}
+
 .rec-body {
   margin: 25px;
 }

@@ -3,6 +3,7 @@ import CategoryInput from './CategoryInput'
 import { fetchRecommendations, deleteRecommendation, addRecommendation, editRecommendation } from '../actions/recommendationsActions';
 import { fetchCategories } from '../actions/categoriesActions';
 import { Form, Button, Alert } from 'react-bootstrap';
+import { Redirect } from 'react-router-dom'
 
 import { connect } from 'react-redux'
 
@@ -16,7 +17,8 @@ class RecommendationInput extends Component {
     titleAlert: false,
     categoryAlert: false,
     loadRecData: false,
-    editStatus: false
+    editStatus: false,
+    toRecList: false
   }
 
   componentDidMount() {
@@ -73,10 +75,13 @@ class RecommendationInput extends Component {
         title: '',
         description: '',
         category_id: '',
+        recommendation_id: '',
         titleAlert: false,
-        categoryAlert: false
+        categoryAlert: false,
+        loadRecData: false,
+        editStatus: false,
+        toRecList: true
       });
-      //add a redirect here to show page...
     } else if (!this.state.title && !this.state.category_id) {
       this.setState({
         titleAlert: true,
@@ -109,7 +114,12 @@ class RecommendationInput extends Component {
     let recommendations = this.props.recommendations;
     if (recommendations.length > 0 && this.state.loadRecData) {
       this.selectRecommendation(recommendations)
-    }
+    };
+
+    if (this.state.toRecList) {
+      return <Redirect to='/recommendations' />
+    };
+
     return (
       <div className="rec-body">
         <h2>{this.titleText()}</h2>

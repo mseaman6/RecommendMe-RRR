@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
 import { Form, Button } from 'react-bootstrap';
+import { Redirect } from 'react-router-dom'
 
 
 class CommentInput extends Component {
 
   state = {
     text: '',
-    recommendation_id: this.props.recID
+    recommendation_id: this.props.recID,
   }
 
   handleOnChange(event) {
@@ -20,11 +21,11 @@ class CommentInput extends Component {
     this.props.addComment(this.props.recID, this.state);
     this.setState({
       text: '',
-      recommendation_id: ''
     });
   }
 
   render() {
+
     return (
       <div>
         <h4>Create a Comment:</h4>

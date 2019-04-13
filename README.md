@@ -42,6 +42,5 @@ Things you may want to cover:
 * ...
 
 #next steps
--set up Recommendation edit page; need to figure out how to prevent setState from endless cycle
--and then create actions for update to recommendations
+-need redirects for submit/edit of recommendation to show page
 -check comments actions with add and delete for refreshing of comment list
