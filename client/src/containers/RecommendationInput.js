@@ -90,7 +90,7 @@ class RecommendationInput extends Component {
 
   render() {
     return (
-      <div>
+      <div className="rec-body">
         <h2>Create a Recommendation:</h2>
         <Alert className="errorTitle" variant="danger" show={this.state.titleAlert} >A title is required.</Alert>
         <Alert className="errorTitle" variant="danger" show={this.state.categoryAlert}>You are required to select a category from the dropdown menu.</Alert>
@@ -127,7 +127,7 @@ class RecommendationInput extends Component {
               placeholder="Select a Category"
               value={this.state.category}
               onChange={(event) => this.handleOnChange(event)} >
-              <option key={0}></option>
+              <option key={0}>Select</option>
               {this.renderCategories()}
             </Form.Control>
           </Form.Group>

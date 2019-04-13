@@ -27,7 +27,7 @@ class CategoryInput extends Component {
 
   render() {
     return (
-      <div>
+      <div className="rec-body">
       <InputGroup className="mb-3">
         <FormControl
           type="text"

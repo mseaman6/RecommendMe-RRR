@@ -12,7 +12,7 @@ class CategoryRecommendationsContainer extends Component {
 
   render() {
     return (
-      <div>
+      <div className="rec-body">
         <Category category={this.props.category} />
       </div>
     )

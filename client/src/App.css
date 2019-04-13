@@ -7,6 +7,10 @@ img, video, audio, iframe, table form {
 
 /*////// LAYOUT STYLES //////*/
 
+.rec-body {
+  margin: 25px;
+}
+
 .row {
   margin-bottom: 25px;
   margin-top: 25px;

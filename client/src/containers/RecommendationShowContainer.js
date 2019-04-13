@@ -12,7 +12,7 @@ class RecommendationShowContainer extends Component {
 
   render() {
     return (
-      <div>
+      <div className="rec-body">
         <RecommendationShow recommendation={this.props.recommendation} deleteRecommendation={this.props.deleteRecommendation} />
       </div>
     )

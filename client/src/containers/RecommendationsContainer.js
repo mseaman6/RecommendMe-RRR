@@ -11,7 +11,7 @@ class RecommendationsContainer extends Component {
   render() {
 
     return (
-      <div>
+      <div className="rec-body">
         <Recommendations recommendations={this.props.recommendations} deleteRecommendation={this.props.deleteRecommendation} />
       </div>
     )
