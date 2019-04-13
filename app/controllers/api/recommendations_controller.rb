@@ -1,11 +1,7 @@
 class Api::RecommendationsController < ApplicationController
 
   def index
-    if params[:category_id]
-      @recommendations = Recommendation.where("category_id = ?", (params[:category_id]))
-    else
-      @recommendations = Recommendation.all
-    end
+    @recommendations = Recommendation.all
     render json: @recommendations
   end
 

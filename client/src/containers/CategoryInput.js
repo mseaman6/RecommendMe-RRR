@@ -18,7 +18,6 @@ class CategoryInput extends Component {
 
   handleCategorySubmit(event) {
     event.preventDefault();
-    debugger;
     this.props.addCategory(this.state.category);
     this.setState({
       category: ''
@@ -27,7 +26,7 @@ class CategoryInput extends Component {
 
   render() {
     return (
-      <div className="rec-body">
+      <div>
       <InputGroup className="mb-3">
         <FormControl
           type="text"

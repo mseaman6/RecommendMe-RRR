@@ -42,6 +42,6 @@ Things you may want to cover:
 * ...
 
 #next steps
--set up Recommendation edit page
+-set up Recommendation edit page; need to figure out how to prevent setState from endless cycle
+-and then create actions for update to recommendations
 -check comments actions with add and delete for refreshing of comment list
--determine what additional functionality desired for project submission

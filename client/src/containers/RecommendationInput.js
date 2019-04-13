@@ -19,22 +19,18 @@ class RecommendationInput extends Component {
   componentDidMount() {
     this.props.fetchRecommendations();
     this.props.fetchCategories();
-    if (this.props.match.params.id) {
-      this.selectRecommendation(this.props.recommendations);
-    }
   }
 
-  selectRecommendation = () => {
+  selectRecommendation = (recommendations) => {
     const recommendationID = this.props.match.params.id;
-    debugger;
-    if (this.props.recommendations.length > 0) {
-      const rec = this.props.recommendations.filter(recommendation => recommendation.id === parseInt(recommendationID));
-      this.setRecommendation(rec)
+    if (recommendationID && recommendations.length > 0) {
+      const rec = recommendations.filter(recommendation => recommendation.id === parseInt(recommendationID));
+      this.setRecommendation(rec[0])
     }
   }
 
   setRecommendation = (recommendation) => {
-    debugger;
+    debugger; //need to figure out how to remove from render so not repeated calls to setState
     this.setState({
       title: recommendation.title,
       description: recommendation.description,
@@ -51,7 +47,6 @@ class RecommendationInput extends Component {
   handleOnSubmit(event) {
     event.preventDefault();
     if (this.state.title && this.state.category_id) {
-      debugger;
       this.props.addRecommendation({
         title: this.state.title,
         description: this.state.description,
@@ -89,6 +84,7 @@ class RecommendationInput extends Component {
   }
 
   render() {
+    this.selectRecommendation(this.props.recommendations);
     return (
       <div className="rec-body">
         <h2>Create a Recommendation:</h2>
@@ -125,7 +121,7 @@ class RecommendationInput extends Component {
               as="select"
               name="category_id"
               placeholder="Select a Category"
-              value={this.state.category}
+              value={this.state.category_id}
               onChange={(event) => this.handleOnChange(event)} >
               <option key={0}>Select</option>
               {this.renderCategories()}
