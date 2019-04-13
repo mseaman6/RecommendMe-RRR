@@ -56,7 +56,6 @@ class RecommendationInput extends Component {
   handleOnSubmit(event) {
     event.preventDefault();
     if (this.state.title && this.state.category_id) {
-      debugger;
       if (this.state.editStatus) {
         this.props.editRecommendation(this.state.recommendation_id, {
           title: this.state.title,

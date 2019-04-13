@@ -4,15 +4,18 @@ import CommentsContainer from '../../containers/CommentsContainer'
 
 class RecommendationShow extends Component {
 
+  getCategory = (category) => category ?  category.name : null
+
 
   render() {
     let recommendation = this.props.recommendation;
     let editLink = "/recommendations/" + recommendation.id + "/edit";
-    if (recommendation) {
-      return (
-        <div>
-          <h2>{recommendation.title}</h2>
-          <div>Description: {recommendation.description}</div>
+
+    return (
+      <div className="recBody">
+        <h2>{recommendation.title}</h2>
+        <p>Category: {this.getCategory(recommendation.category)}</p>
+        <p>Description: {recommendation.description}</p>
           <ButtonToolbar>
             <Button variant="info" size="sm" href={editLink}>
               Edit
@@ -22,11 +25,8 @@ class RecommendationShow extends Component {
             </Button>
           </ButtonToolbar>
           <CommentsContainer recommendationID={recommendation.id} comments={recommendation.comments} />
-        </div>
-      );
-    } else {
-      return null
-    }
+      </div>
+    );
   }
 };
 
