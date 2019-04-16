@@ -1,9 +1,9 @@
 # RecommendMe
 ##Description:
-This application was created in order to organize and share recommendations among a groups of individuals.   A user is able to see a listing of all the current recommendations.  A user may create new recommendations, and comment on existing recommendations.  A user may also view details on existing recommendations (including user's comments).  Recommendations may also be viewed limited to specific categories.
+This application was created to organize and share recommendations.   A user is able to see a listing of current recommendations, create new recommendations, and edit, delete and comment on existing recommendations.  Recommendations can also be viewed by category, and the details of each recommendation can be viewed separately.
 
 ##Install Instructions:
-To use this app, just fork and clone it from GitHub, run 'bundle install', and 'rake db:migrate'. Then launch it by entering "rake start" in your terminal.  This will initiate to separate connections, one to the React
+To use this app, just fork and clone it from GitHub, run 'bundle install', and 'rake db:migrate'. Then launch it by entering "rake start" in your terminal.  This will initiate two separate connections, one which will start the React server, and another which will start the Rails API server.  In the development environment, API requests will automatically be proxied to the correct server, and CORS issues will be avoided.
 
 ##Contributors Guide:
 We welcome the input, advice and contribution of others.
@@ -20,27 +20,3 @@ If you notice a problem with the application that you believe needs improvement 
 
 ##Link to License for Code:
 This project has been licensed under the MIT open source license. Please view the LICENSE file for permissions related to this application.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-#next steps
--need redirects for submit/edit of recommendation to show page
--check comments actions with add and delete for refreshing of comment list
